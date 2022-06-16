@@ -65,41 +65,44 @@
 
 ; CONFIG7H
   CONFIG  EBTRB = OFF           ; Boot Block Table Read Protection bit (Boot block (000000-0007FFh) is not protected from table reads executed in other blocks)
-
-
-R1 EQU 0X70
-R2 EQU 0X71
-R3 EQU 0X72
+ 
+// For XTAL = 20MHZ with PLL enabled with clock frequency of 48MHz
   
-psect   RESET_VECT,class=CODE,reloc=2 ; PIC18
-RESET_VECT:
-    GOTO SETUP
-     
-    
-psect   INT_VECT,class=CODE,reloc=2 ; PIC18
-INT_VECT:
-    RETFIE
-SETUP:
-    CLRF TRISB
-    MOVLW 0XFF
-    MOVWF PORTB
-L1: COMF PORTB,F
-    call delay
-    goto L1
 
-delay:
-    MOVLW 60
-    MOVWF R1
-L4: MOVLW 0XFF
-    MOVWF R2
-L3: MOVLW 0XFF
-    MOVWF R3
-L2: DECF R3,F
-    BNZ L2
-    DECF R2,F
-    BNZ L3
-    DECF R1,F
-    BNZ L4
-    RETURN
+R1 EQU 0x00        ;Defining a name for General Purpose Ram location 0x00
+R2 EQU 0x01	   ;Defining a name for General Purpose Ram location 0x01
+R3 EQU 0x02        ;Defining a name for General Purpose Ram location 0x02
+
+ 
+psect   ResetVector,class=CODE,reloc=2 ; PIC18 code space definition  
+ResetVector:        ;Reset Vector Location 0x00, must be defined on the linker
+    goto main	      ;Jump to main to bypass interrupt vector table
+
+
+psect   IntVect,class=CODE,reloc=2 ; PIC18   ;Interrupt vector location defined at 0x08 for PIC18F4550
+IntVect:
+    RETFIE
     
-END RESET_VECT
+main:
+    CLRF TRISB      ;Presetting PORTB as OUTPUT Port
+    setf PORTB	    ;Output the value to PORTB
+l1: COMF PORTB,f    ;Complimenting PORTB with a delay to get blinking effect
+    CALL Delay_1s   ;Call Subroutine Delay for 1 sec
+    bra l1
+    
+Delay_1s:
+    MOVLW 60	    ;Outer loop 60 times to achieve 1s delay
+    MOVWF R1
+l4: MOVLW 0xFF
+    MOVWF R2
+l3: MOVLW 0xFF
+    MOVWF R3
+l2: DECF R3,f
+    BNZ l2
+    DECF R2,f
+    BNZ l3
+    DECF R1,f
+    BNZ l4
+    RETURN	    ;Return to main program after 1s delay
+    
+END ResetVector	    ;Code End
