@@ -4,7 +4,7 @@ This repository contains all my code on programming PIC microcontrollers from ba
 
 ## _DISCLAIMER!!_
 
-- All my code is applicable only for **PIC18F4550** Microcontroller. If you are using a different famiy or different chip of the same family, the code may not work properly.
+- All my code is applicable only for **PIC18F4550** Microcontroller. If you are using a different family or different chip of the same family, the code may not work properly.
 
 - My code is for **reference** purpose only. My intention of posting my code in public is for my reference in future and for my colleagues reference only. Other poeple can also use this code as a reference.
 
@@ -18,10 +18,12 @@ This repository contains all my code on programming PIC microcontrollers from ba
 
 ## Assembly Folder
 
-Assembler : **pic-as**
-IDE Software : **MPLAB IDE**
-Programmer/Debugger: **PicKit 3**
-Microcontroller Chipset: **PIC18F4550**
+```
+ Assembler : **pic-as**
+ IDE Software : **MPLAB IDE**
+ Programmer/Debugger: **PicKit 3**
+ Microcontroller Chipset: **PIC18F4550**
+```
 
 Assembly Folder contains all my code written in PIC18 Instruction Set for PIC18F4550 specifically.
 
@@ -33,10 +35,12 @@ I will try to comment all my code. But in some cases, due to time constraints, I
 
 ## Embedded C Folder
 
-Assembler : **XC8 Compiler**
-IDE Software : **MPLAB IDE**
-Programmer/Debugger: **PicKit 3**
-Microcontroller Chipset: **PIC18F4550**
+```
+ Assembler : **XC8 Compiler**
+ IDE Software : **MPLAB IDE**
+ Programmer/Debugger: **PicKit 3**
+ Microcontroller Chipset: **PIC18F4550**
+```
 
 Embedded C folder contains all my projects and interfacing written in embedded C language.
 
