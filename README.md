@@ -1,12 +1,12 @@
 # PIC_Programs
 
-This repository contains all my code on programming PIC microcontrollers from basic addressing modes and LED Blinking to interfacing GPRS MNodule and OLED Displays. Make sure to read the below _disclaimer_ before proceeding to check my code.
+This repository contains all my code on programming PIC microcontrollers from basic addressing modes and LED Blinking to interfacing GPRS Module and OLED Displays. Make sure to read the below _disclaimer_ before proceeding to check my code.
 
 ## _DISCLAIMER!!_
 
 - All my code is applicable only for **PIC18F4550** Microcontroller. If you are using a different family or different chip of the same family, the code may not work properly.
 
-- My code is for **reference** purpose only. My intention of posting my code in public is for my reference in future and for my colleagues reference only. Other poeple can also use this code as a reference.
+- My code is for **reference** purpose only. My intention of posting my code in public is for my reference in future and for my colleagues reference only. Other people can also use this code as a reference.
 
 - It should be noted that all my code is for learning and development purposes only.
 
