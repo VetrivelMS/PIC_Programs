@@ -36,7 +36,7 @@ I will try to comment all my code. But in some cases, due to time constraints, I
 ## Embedded C Folder
 
 ```
- Assembler : XC8 Compiler
+ Compiler : XC8 Compiler
  IDE Software : MPLAB IDE
  Programmer/Debugger: PicKit 3
  Microcontroller Chipset: PIC18F4550
