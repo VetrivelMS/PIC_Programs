@@ -29,7 +29,7 @@ Assembly Folder contains all my code written in PIC18 Instruction Set for PIC18F
 
 I have organised my code based on Category (Eg.. LCD Interface, SPI, I2C,etc..).
 Inside each category you will find a particular project and inside that project folder you will find the Assembly code.
-Each project will have a **main.s** file which is the assembly Code and also a **Ready to Burn** HEX FILE.
+Each project will have a **_main.s_** file which is the assembly Code and also a **_Ready to Burn_** HEX FILE.
 
 The project folder will also contain a ready to burn hex file. People can use the hex file directly and burn it to their chip directly if they want to.
 
